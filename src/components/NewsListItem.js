@@ -14,7 +14,8 @@ export default class NewsListItem extends Component {
     let feedData = this.props.data;
     return(
       <div>
-        <pre><strong>{feedData.title}</strong></pre>
+        <strong>{feedData.title}</strong>
+        <p>{feedData.summary}</p>
       </div>
     )
   }

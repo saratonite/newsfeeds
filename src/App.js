@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import './NewsList.css';
 
 // import Components
 
@@ -12,7 +13,9 @@ class App extends Component {
         <div className="App-header">
           <h2>News Feeds</h2>
         </div>
+        <div>
         <NewsList/>
+        </div>
       </div>
     );
   }

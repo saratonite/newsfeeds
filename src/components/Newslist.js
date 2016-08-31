@@ -11,17 +11,33 @@ export default class Newslist extends Component {
   }
 
 componentDidMount(){
+  //window.addEventListener('scroll', this.handleScroll);
+  this.fetchNewsFeed();
 
-let self = this;
+}
 
-axios.get('https://api.recsys.opera.com/api/1.0/suggestions/sources?ids=5544%2C5182%2C14181%2C2113%2C13504%2C13473%2C13463%2C14600%2C7136%2C2102&count=3')
-      .then(function(response){
+fetchNewsFeed(){
+  let self = this;
+  axios.get('https://api.recsys.opera.com/api/1.0/suggestions/sources',{
+          params:{
+            ids:"5545,4376,5183,4381,13072,4384,5187,13472,13503,13493",
+            timeline:true,
+            count:20,
+            page:0
+          }
+        })
+        .then(function(response){
+          console.info(response);
+          self.setState({news:response.data.articles})
 
-        console.info(response);
-        self.setState({news:response.data.articles})
+        });
+}
 
-      })
-
+handleScroll(e) {
+  if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        // you're at the bottom of the page
+        alert('Yep');
+    }
 }
 
   feeds(){
@@ -32,10 +48,14 @@ axios.get('https://api.recsys.opera.com/api/1.0/suggestions/sources?ids=5544%2C5
 
   }
 
+  loadMore(){
+    alert('dd');
+  }
+
   render(){
     return(
 
-      <div className="news-list">
+      <div className="news-list" onScroll={this.loadMore.bind(this)}>
         <h2>News List</h2>
         {this.feeds()}
       </div>
