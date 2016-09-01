@@ -7,7 +7,7 @@ import NewsListItem from './NewsListItem.js';
 export default class Newslist extends Component {
   constructor(){
     super();
-    this.state = {news:[]};
+    this.state = {news:[],page:0};
   }
 
 componentDidMount(){
@@ -23,12 +23,11 @@ fetchNewsFeed(){
             ids:"5545,4376,5183,4381,13072,4384,5187,13472,13503,13493",
             timeline:true,
             count:20,
-            page:0
+            page:self.state.page
           }
         })
         .then(function(response){
-          console.info(response);
-          self.setState({news:response.data.articles})
+          self.setState({news:response.data.articles,page:0});
 
         });
 }
@@ -58,6 +57,8 @@ handleScroll(e) {
       <div className="news-list" onScroll={this.loadMore.bind(this)}>
         <h2>News List</h2>
         {this.feeds()}
+
+        <a href="#">More...</a>
       </div>
 
     )

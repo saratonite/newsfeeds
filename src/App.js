@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import './NewsList.css';
+import './components/NewsList.css';
 
 // import Components
 
