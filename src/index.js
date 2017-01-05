@@ -5,6 +5,10 @@ import App from './App';
 import './index.css';
 import store from './store';
 
+console.info(store);
+
+window.store = store;
+
 ReactDOM.render(
   <Provider store={store}>
     <App />

@@ -5,6 +5,9 @@ const defaultState = {
   news_threads:[]
 }
 
-var store = createStore(newsReducer,defaultState);
+const store = createStore(newsReducer,{news_threads:[]});
+
+
+console.info(store.getState());
 
 export default store;
