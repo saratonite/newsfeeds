@@ -19,6 +19,27 @@
   font-size: large;
 }
 
+.feed-list-item{
+  display: flex;
+}
+
+.feed-image{
+
+  flex-basis: 200px;
+
+
+}
+.feed-image img{
+
+  width: 200px;
+}
+.feed-body{
+
+  padding: 1em ;
+
+}
+
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
