@@ -1,5 +1,5 @@
 import React,{Component} from"react";
-
+import { Item } from 'semantic-ui-react'
 export default class NewsListItem extends Component {
   constructor(){
     super();
@@ -13,16 +13,19 @@ export default class NewsListItem extends Component {
   render(){
     let feedData = this.props.data;
     return(
-      <div className="feed-list-item">
-        <div className="feed-image">
-          <img src={feedData.image.url} />
-        </div>
-        <div className="feed-body">
-        <strong>{feedData.title}</strong>
-        <p>{feedData.summary}</p>
-        </div>
 
-      </div>
+        <Item>
+      <Item.Image size='small' src={feedData.image.url} />
+
+      <Item.Content>
+        <Item.Header as='a'>{feedData.title}</Item.Header>
+        <Item.Description>
+          <p>
+           {feedData.summary}
+          </p>
+        </Item.Description>
+      </Item.Content>
+    </Item>
     )
   }
 }

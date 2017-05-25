@@ -1,5 +1,6 @@
 import React,{Component} from"react";
 import axios from 'axios';
+import { Item } from 'semantic-ui-react'
 import { connect } from 'react-redux';
 
 import {sayHello,fetchNews} from '../actions';
@@ -47,13 +48,9 @@ handleScroll(e) {
 
   render(){
     return(
-
-      <div className="news-list" >
-        <h2>News List</h2>
+       <Item.Group>
         {this.feeds()}
-
-        <a href="#">More...</a>
-      </div>
+       </Item.Group>
 
     )
   }
