@@ -1,5 +1,6 @@
 import React,{Component} from"react";
 import { Item } from 'semantic-ui-react'
+import PropTypes from 'prop-types';
 export default class NewsListItem extends Component {
   constructor(){
     super();
@@ -28,4 +29,8 @@ export default class NewsListItem extends Component {
     </Item>
     )
   }
+}
+
+NewsListItem.propTypes = {
+  data: PropTypes.object.isRequired
 }

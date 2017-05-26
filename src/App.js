@@ -21,7 +21,7 @@ export default class App extends Component {
         <Menu.Menu position='right'>
             <div className='ui right aligned category search item'>
               <div className='ui transparent icon input'>
-                <input className='prompt' type='text' placeholder='Search animals...' />
+                <input className='prompt' type='text' placeholder='Search...' />
                 <i className='search link icon' />
               </div>
               <div className='results'></div>
@@ -29,11 +29,11 @@ export default class App extends Component {
           </Menu.Menu>
         </Menu>
         <Grid>
-          <Grid.Row>
+          <Grid.Row style={{"margin-bottom":"10px"}}>
             <Grid.Column width={3}>
               <h1>News Feeds</h1>
             </Grid.Column>
-            <Grid.Column width={12}>
+            <Grid.Column width={12} >
               <NewsList/>
             </Grid.Column>
           </Grid.Row>

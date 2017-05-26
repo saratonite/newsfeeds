@@ -2,6 +2,7 @@ import React,{Component} from"react";
 import axios from 'axios';
 import { Item } from 'semantic-ui-react'
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import {sayHello,fetchNews} from '../actions';
 
@@ -73,6 +74,10 @@ function mapDispatchToProps(dispatch){
         }
 
   };
+}
+
+Newslist.propTypes = {
+  loadNews: PropTypes.func.isRequired
 }
 
 const newslistContainer = connect(mapStateToProps,mapDispatchToProps)(Newslist);
